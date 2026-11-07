@@ -43,9 +43,9 @@ jobs:
       - name: Sanity-check frozen helper
         shell: pwsh
         run: |
-          Test-Path "dist/idm-helper/idm-helper.exe"
+          Test-Path "dist/idm-helper.exe"
           # --doctor returns quickly and prints a report; do not fail the build on its exit code here
-          & "dist/idm-helper/idm-helper.exe" --doctor
+          & "dist/idm-helper.exe" --doctor
 
       - name: Install Inno Setup
         shell: pwsh
