@@ -12,35 +12,35 @@
       "url": "https://github.com/aria2/aria2/releases/download/release-1.37.0/aria2-1.37.0-win-64bit-build1.zip",
       "archive": "zip",
       "member": "aria2-1.37.0-win-64bit-build1/aria2c.exe",
-      "sha256": "REPLACE_ME"
+      "sha256": "be2099c214f63a3cb4954b09a0becd6e2e34660b886d4c898d260febfe9d70c2"
     },
     "ffmpeg": {
       "file": "ffmpeg.exe",
       "url": "https://www.gyan.dev/ffmpeg/builds/ffmpeg-release-essentials.zip",
       "archive": "zip",
       "member": "*/bin/ffmpeg.exe",
-      "sha256": "REPLACE_ME"
+      "sha256": "3256173f3f8bffd7df12227c68adf68025edb1832273a9530688a7bb1ed8edec"
     },
     "ffprobe": {
       "file": "ffprobe.exe",
       "url": "https://www.gyan.dev/ffmpeg/builds/ffmpeg-release-essentials.zip",
       "archive": "zip",
       "member": "*/bin/ffprobe.exe",
-      "sha256": "REPLACE_ME"
+      "sha256": "f0d36ecbbdd3bcfac3efa078c96c7271c2e68b3810595552ac3b7f17e9a65c52"
     },
     "yt-dlp": {
       "file": "yt-dlp.exe",
-      "url": "https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp.exe",
+      "url": "https://github.com/yt-dlp/yt-dlp/releases/download/2026.10.26/yt-dlp.exe",
       "archive": "none",
       "member": "",
-      "sha256": "REPLACE_ME"
+      "sha256": "f5389d3698ecde4ef06f4e6b1ce0294fe9ac1396228c8990b8d3416d6d177a7d"
     },
     "deno": {
       "file": "deno.exe",
-      "url": "https://github.com/denoland/deno/releases/latest/download/deno-x86_64-pc-windows-msvc.zip",
+      "url": "https://github.com/denoland/deno/releases/download/v2.9.8/deno-x86_64-pc-windows-msvc.zip",
       "archive": "zip",
       "member": "deno.exe",
-      "sha256": "REPLACE_ME"
+      "sha256": "924397800533d3eb0ed0c889b20ad70e18b970d93acd8135bc043f425e528266"
     }
   }
 }
