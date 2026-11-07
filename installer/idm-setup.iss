@@ -81,7 +81,7 @@ var
 
 function FinalText(): String;
 begin
-  { {app} may only be expanded after the install folder is chosen. }
+  // The app folder can only be expanded after the install folder is chosen.
   Result :=
     '1) Open brave://extensions  (or chrome://extensions, edge://extensions)' + #13#10 +
     '2) Enable "Developer mode"' + #13#10 +
