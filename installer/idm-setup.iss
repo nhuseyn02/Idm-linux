@@ -79,12 +79,10 @@ var
   OpenFolderCheck: TNewCheckBox;
   ErrorCode: Integer;
 
-procedure InitializeWizard();
+function FinalText(): String;
 begin
-  { Final page: AZ + EN instructions, no emoji. }
-  FinalPage := CreateOutputMsgPage(wpSelectTasks,
-    'Son addim / Final step',
-    'Genisdirmeni brauzere yukleyin / Load the extension in your browser',
+  { {app} may only be expanded after the install folder is chosen. }
+  Result :=
     '1) Open brave://extensions  (or chrome://extensions, edge://extensions)' + #13#10 +
     '2) Enable "Developer mode"' + #13#10 +
     '3) Click "Load unpacked"' + #13#10 +
@@ -94,7 +92,16 @@ begin
     '1) brave://extensions unvanini acin' + #13#10 +
     '2) "Developer mode" rejimini aktiv edin' + #13#10 +
     '3) "Load unpacked" duymesine basin' + #13#10 +
-    '4) Bu qovluqu secin: ' + ExpandConstant('{app}\extension'));
+    '4) Bu qovluqu secin: ' + ExpandConstant('{app}\extension');
+end;
+
+procedure InitializeWizard();
+begin
+  { Final page: AZ + EN instructions, no emoji. Text is filled in later. }
+  FinalPage := CreateOutputMsgPage(wpSelectTasks,
+    'Son addim / Final step',
+    'Genisdirmeni brauzere yukleyin / Load the extension in your browser',
+    '');
 
   OpenFolderCheck := TNewCheckBox.Create(WizardForm);
   OpenFolderCheck.Parent := FinalPage.Surface;
@@ -104,6 +111,12 @@ begin
   OpenFolderCheck.Height := 20;
   OpenFolderCheck.Caption := 'Extensiya qovlugunu ac / Open extension folder';
   OpenFolderCheck.Checked := True;
+end;
+
+procedure CurPageChanged(CurPageID: Integer);
+begin
+  if CurPageID = FinalPage.ID then
+    FinalPage.MsgLabel.Caption := FinalText();
 end;
 
 procedure CurStepChanged(CurStep: TSetupStep);
