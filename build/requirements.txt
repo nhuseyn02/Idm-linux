@@ -1,0 +1,16 @@
+# JDM Windows helper — build/runtime Python requirements.
+#
+# The helper itself uses only the Python standard library. The single extra
+# runtime dependency is psutil, used for the doctor and process accounting.
+# Everything else (aria2c, ffmpeg, yt-dlp) is shipped as an external .exe in
+# bin/ and downloaded by build/download_tools.py.
+psutil>=5.9,<7
+
+# ---------------------------------------------------------------------------
+# OPTIONAL — song align (MMS/CTC), NOT supported on Windows and NOT bundled.
+# Left commented so `pip install -r` stays small and the Windows build has no
+# heavy ML wheels. Un-comment only if you ever port song_align to Windows.
+# ---------------------------------------------------------------------------
+# numpy>=1.24
+# onnxruntime>=1.17
+# torch>=2.2

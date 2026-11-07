@@ -1,0 +1,46 @@
+{
+  "_comment": [
+    "Pinned third-party Windows tools shipped in bin/.",
+    "URLs point at official/vendor static builds. The sha256 values MUST be",
+    "filled with the real hashes before a signed release (see below). CI fails",
+    "the build if any sha256 is the literal string 'REPLACE_ME'.",
+    "To compute a hash:  certutil -hashfile <file> SHA256   (or sha256sum)."
+  ],
+  "tools": {
+    "aria2c": {
+      "file": "aria2c.exe",
+      "url": "https://github.com/aria2/aria2/releases/download/release-1.37.0/aria2-1.37.0-win-64bit-build1.zip",
+      "archive": "zip",
+      "member": "aria2-1.37.0-win-64bit-build1/aria2c.exe",
+      "sha256": "REPLACE_ME"
+    },
+    "ffmpeg": {
+      "file": "ffmpeg.exe",
+      "url": "https://www.gyan.dev/ffmpeg/builds/ffmpeg-release-essentials.zip",
+      "archive": "zip",
+      "member": "*/bin/ffmpeg.exe",
+      "sha256": "REPLACE_ME"
+    },
+    "ffprobe": {
+      "file": "ffprobe.exe",
+      "url": "https://www.gyan.dev/ffmpeg/builds/ffmpeg-release-essentials.zip",
+      "archive": "zip",
+      "member": "*/bin/ffprobe.exe",
+      "sha256": "REPLACE_ME"
+    },
+    "yt-dlp": {
+      "file": "yt-dlp.exe",
+      "url": "https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp.exe",
+      "archive": "none",
+      "member": "",
+      "sha256": "REPLACE_ME"
+    },
+    "deno": {
+      "file": "deno.exe",
+      "url": "https://github.com/denoland/deno/releases/latest/download/deno-x86_64-pc-windows-msvc.zip",
+      "archive": "zip",
+      "member": "deno.exe",
+      "sha256": "REPLACE_ME"
+    }
+  }
+}

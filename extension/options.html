@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JDM — AI Subtitle Settings</title>
+<style>
+  :root{color-scheme:dark}
+  body{margin:0;background:#1c1c1e;color:#eee;font:14px system-ui,-apple-system,Segoe UI,sans-serif}
+  main{max-width:680px;margin:36px auto;padding:24px;background:#232326;border:1px solid #3a3a3d;border-radius:12px}
+  h1{font-size:20px;margin:0 0 4px}
+  .sub{color:#999;font-size:12px;margin:0 0 20px}
+  label{display:block;color:#bbb;font-size:12px;margin:14px 0 6px}
+  input[type=password],input[type=text],select{width:100%;box-sizing:border-box;background:#2f2f32;color:#eee;border:1px solid #46464a;border-radius:7px;padding:9px 10px;font:13px inherit}
+  .row{display:flex;gap:8px;align-items:center}
+  .row input{flex:1}
+  button{background:#2f6fed;color:#fff;border:0;border-radius:7px;padding:9px 14px;font-weight:650;cursor:pointer}
+  button.secondary{background:#3a3a3d;color:#eee}
+  button:disabled{opacity:.45;cursor:not-allowed}
+  #status{margin-top:12px;font-weight:650;min-height:20px}
+  #status.ok{color:#2ecc71}#status.bad{color:#ff5d5d}#status.wait{color:#e5b94a}
+  #modelsWrap{display:none;margin-top:14px}
+  .hint{margin-top:18px;padding:12px;border-radius:8px;background:#1c1c1e;color:#999;font-size:12px;line-height:1.5}
+  code{color:#cfcfd4}
+</style>
+</head>
+<body>
+<main>
+  <h1>JDM — AI Subtitle Settings</h1>
+  <p class="sub">Gemini API key and model used by JDM AI Subtitle controls.</p>
+
+  <label for="key">Gemini API Key</label>
+  <div class="row">
+    <input id="key" type="password" autocomplete="off" spellcheck="false" placeholder="AIza…">
+    <button id="verify">Verify</button>
+  </div>
+  <div id="status"></div>
+
+  <div id="modelsWrap">
+    <label for="model">Gemini model</label>
+    <select id="model"></select>
+  </div>
+
+  <div class="hint">
+    The key is stored only in <code>chrome.storage.local</code> and is sent directly to
+    <code>generativelanguage.googleapis.com</code> when verifying or translating. It is never
+    written to page content scripts or logs.
+  </div>
+</main>
+<script src="options.js"></script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+{
+  "manifest_version": 3,
+  "name": "JDM",
+  "version": "1.0.0",
+  "description": "JDM (Jonathan Download Manager) — videoların üstündə yükləmə düyməsi, brauzer yükləmələrini aria2/yt-dlp ilə sürətləndirir.",
+  "permissions": [
+    "webRequest",
+    "webNavigation",
+    "downloads",
+    "tabs",
+    "storage",
+    "cookies",
+    "contextMenus",
+    "scripting",
+    "declarativeNetRequest"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "JDM"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "hook.js"
+      ],
+      "all_frames": true,
+      "match_about_blank": true,
+      "run_at": "document_start",
+      "world": "MAIN"
+    },
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "i18n.js",
+        "shared.js",
+        "content.js",
+        "smart.js"
+      ],
+      "all_frames": true,
+      "match_about_blank": true,
+      "run_at": "document_idle"
+    },
+    {
+      "matches": [
+        "*://*.tiktok.com/*",
+        "*://*.instagram.com/*",
+        "*://*.youtube.com/*",
+        "*://*.facebook.com/*",
+        "*://fb.watch/*",
+        "*://web.telegram.org/*",
+        "*://webk.telegram.org/*",
+        "*://webz.telegram.org/*",
+        "*://t.me/*",
+        "*://telegram.me/*",
+        "*://telegram.dog/*",
+        "*://web.whatsapp.com/*",
+        "*://*.x.com/*",
+        "*://*.twitter.com/*",
+        "*://*.threads.net/*",
+        "*://*.threads.com/*",
+        "*://*.reddit.com/*",
+        "*://*.vimeo.com/*",
+        "*://*.dailymotion.com/*",
+        "*://*.twitch.tv/*",
+        "*://*.soundcloud.com/*",
+        "*://*.pinterest.com/*",
+        "*://*.linkedin.com/*"
+      ],
+      "js": [
+        "namer.js",
+        "feed.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  }
+}
